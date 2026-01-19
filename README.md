@@ -10,6 +10,25 @@
 
 此外，稍微注意一下环境和版本问题。本人在 wsl 环境下运行，做的是 25 spring 版本，使用 go 1.23.5 版本。
 
+## 目录
+
+### lab1: Map Reduce
+
+看完 lec1 就可以开始做 lab1 了。
+
+- 课程笔记 lec1：[课程笔记 lec1](./lec/lec1-introduction.md)
+- lab1 论文原文翻译：[MapReduce 论文](./paper/MapReduce.md)
+- lab1 论文原文阅读笔记：[MapReduce 阅读笔记](./paper-read/paper1.md)
+- lab1 实验要求翻译：[lab1 实验要求翻译](./lab1/mr.md)
+- lab1 实验要求分析：[lab1 实验要求分析](./lab1/mr-exp.md)
+- lab1 框架代码阅读：
+  - 串行版本实现：[mr-seq](./lab1/code/mrsequential.go)
+  - key-value 接口定义：[mr-kv](./lab1/code/wc.go)
+- lab1 过程笔记：[mr-aar](./lab1/mr-aar.md)
+- lab1 测试记录
+  - mr 测试记录 1：[mr 测试记录 1](./lab1/test1.md)
+  - mr 测试记录 2：[mr 测试记录 2](./lab1/test2.md)
+
 ## 参考资料
 
 1.[课程原网站](https://pdos.csail.mit.edu/6.824/schedule.html)

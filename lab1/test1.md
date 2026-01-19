@@ -13,9 +13,12 @@
 
 失败的测试
 
-1. Starting reduce parallelism test。Reduce 并行度测试，说明 Reduce 任务并没有真正齐心协力地跑起来，可能是因为任务分发逻辑有阻塞，或者 Worker 在获取 Reduce 任务时配合不够默契，导致有的 Worker 在干活，有的却没能及时拿到任务，产出不够快。
+1. Starting reduce parallelism test。Reduce 并行度测试，并没有两只以上的 Reduce 在同时干活，有三个问题：
+    1. Coordinator 在 Map 阶段还没彻底结束时，就把 Reduce 任务卡住了，导致 Reduce Worker 拿不到活，只能在那干等（Waiting）。
+    2. 锁加得太重了，导致 Worker 们排队领任务，失去了并发的意义。
+    3. Worker 拿到 Reduce 任务后迅速崩溃了，没来得及写文件。
 2. Starting early exit test。提前退出测试，说明缺乏原子写入机制。Worker 写文件写到一半早退跑路了，在磁盘上留下了写了一半的残缺文件，导致后来接手的 Worker 读到了脏数据或者重复写入，最终结果不对。
-3. Starting crash test。崩溃/容错测试，说明 Coordinator 太痴情了。当 Worker 在做任务途中挂掉或者断连后，Coordinator 还在傻傻地无限期等待，没有超时重试机制（比如 10 秒没做完就重置）把任务抢回来重新分给活着的 Worker。
+3. Starting crash test。崩溃/容错测试，当 Worker 在做任务途中挂掉或者断连后，Coordinator 还在无限期等待，没有超时重试机制把任务抢回来重新分给活着的 Worker。
 
 ```bash
 shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/main$ bash test-mr.sh
