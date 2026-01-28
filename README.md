@@ -20,7 +20,7 @@
 
 ### lab1: Map Reduce
 
-看完 lec1 就可以开始做 lab1 了。
+看完论文就可以开始做 lab1 了。
 
 - lab1 论文原文翻译：[MapReduce 论文](./paper/MapReduce.md)
 - lab1 论文原文阅读笔记：[MapReduce 阅读笔记](./paper-read/paper1.md)
@@ -36,7 +36,9 @@
 
 ### lab2: Key/Value Server
 
-看完 lec3 就可以开始做 lab2 了。2020 版本的课和 2025 的 lab 对应的有出入，虽然和《一种实用的容错虚拟机系统设计》这篇论文有出入，不过其实无所谓。
+其实可以直接做。
+
+2020 版本的课和 2025 的 lab 对应的有出入，虽然和《一种实用的容错虚拟机系统设计》这篇论文有出入，不过其实无所谓。
 
 - lab2 实验要求翻译：[lab2 实验要求翻译](./lab2/kvsrv1.md)
 - lab2 实验要求分析：[lab2 实验要求分析](./lab2/kvsrv1-exp.md)
@@ -44,6 +46,13 @@
 - lab2 测试记录：[lab2 测试记录](./lab2/test.md)
 
 ### lab3：Raft
+
+看完论文就可以开始做 lab3 了，不过我多看了一个 GFS 论文。
+
+- lab1 论文原文翻译：[Raft(Extend) 论文](./paper/Raft(Extend).md)
+- lab1 论文原文阅读笔记：[Raft(Extend) 阅读笔记](./paper-read/paper3.md)
+- lab3 实验要求翻译：[lab3 实验要求翻译](./lab3/raft.md)
+- lab3 实验要求分析：[lab3 实验要求分析](./lab3/raft-exp.md)
 
 ### 论文阅读
 
