@@ -1,0 +1,199 @@
+# test
+
+## task 1
+
+```bash
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run 3A
+Test (3A): initial election (reliable network)...
+  ... Passed --  time  3.6s #peers 3 #RPCs    30 #Ops    0
+Test (3A): election after network failure (reliable network)...
+  ... Passed --  time  5.0s #peers 3 #RPCs    72 #Ops    0
+Test (3A): multiple elections (reliable network)...
+  ... Passed --  time  6.2s #peers 7 #RPCs   366 #Ops    0
+PASS
+ok      6.5840/raft1    14.698s
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run 3A -race
+Test (3A): initial election (reliable network)...
+  ... Passed --  time  3.5s #peers 3 #RPCs    38 #Ops    0
+Test (3A): election after network failure (reliable network)...
+  ... Passed --  time  5.0s #peers 3 #RPCs    66 #Ops    0
+Test (3A): multiple elections (reliable network)...
+  ... Passed --  time  5.8s #peers 7 #RPCs   318 #Ops    0
+PASS
+ok      6.5840/raft1    15.349s
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$
+```
+
+## task 2
+
+```bash
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ time go test -run 3B
+Test (3B): basic agreement (reliable network)...
+  ... Passed --  time  2.2s #peers 3 #RPCs    16 #Ops    0
+Test (3B): RPC byte count (reliable network)...
+  ... Passed --  time  5.2s #peers 3 #RPCs    48 #Ops    0
+Test (3B): test progressive failure of followers (reliable network)...
+  ... Passed --  time  5.6s #peers 3 #RPCs    74 #Ops    0
+Test (3B): test failure of leaders (reliable network)...
+  ... Passed --  time  6.3s #peers 3 #RPCs   108 #Ops    0
+Test (3B): agreement after follower reconnects (reliable network)...
+  ... Passed --  time  6.4s #peers 3 #RPCs    72 #Ops    0
+Test (3B): no agreement if too many followers disconnect (reliable network)...
+  ... Passed --  time  4.3s #peers 5 #RPCs   120 #Ops    0
+Test (3B): concurrent Start()s (reliable network)...
+  ... Passed --  time  1.3s #peers 3 #RPCs    12 #Ops    0
+Test (3B): rejoin of partitioned leader (reliable network)...
+  ... Passed --  time  7.6s #peers 3 #RPCs   116 #Ops    0
+Test (3B): leader backs up quickly over incorrect follower logs (reliable network)...
+  ... Passed --  time 62.6s #peers 5 #RPCs  2632 #Ops    0
+Test (3B): RPC counts aren't too high (reliable network)...
+  ... Passed --  time  3.1s #peers 3 #RPCs    28 #Ops    0
+PASS
+ok      6.5840/raft1    104.745s
+
+real    1m46.310s
+user    0m3.769s
+sys     0m6.017s
+```
+
+## task 3 - test 1
+
+```bash
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run 3C
+Test (3C): basic persistence (reliable network)...
+  ... Passed --  time  6.2s #peers 3 #RPCs    60 #Ops    0
+Test (3C): more persistence (reliable network)...
+  ... Passed --  time 17.5s #peers 5 #RPCs   256 #Ops    0
+Test (3C): partitioned leader and one follower crash, leader restarts (reliable network)...
+  ... Passed --  time  3.2s #peers 3 #RPCs    32 #Ops    0
+Test (3C): Figure 8 (reliable network)...
+  ... Passed --  time 29.8s #peers 5 #RPCs   504 #Ops    0
+Test (3C): unreliable agreement (unreliable network)...
+  ... Passed --  time  9.5s #peers 5 #RPCs   220 #Ops    0
+Test (3C): Figure 8 (unreliable) (unreliable network)...
+Fatal: one(1152) failed to reach agreement
+        /home/shaddocknh3/6.5840/src/raft1/test.go:283
+        /home/shaddocknh3/6.5840/src/raft1/raft_test.go:1050
+info: wrote visualization to /tmp/porcupine-2217591695.html
+--- FAIL: TestFigure8Unreliable3C (46.28s)
+Test (3C): churn (reliable network)...
+  ... Passed --  time 17.3s #peers 5 #RPCs   428 #Ops    0
+Test (3C): unreliable churn (unreliable network)...
+Fatal: one(276564838168865409) failed to reach agreement
+        /home/shaddocknh3/6.5840/src/raft1/test.go:283
+        /home/shaddocknh3/6.5840/src/raft1/raft_test.go:1184
+        /home/shaddocknh3/6.5840/src/raft1/raft_test.go:1219
+info: wrote visualization to /tmp/porcupine-2273915304.html
+--- FAIL: TestUnreliableChurn3C (26.15s)
+FAIL
+exit status 1
+FAIL    6.5840/raft1    155.945s
+```
+
+## task 3 - test 2
+
+```bash
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run 3C
+Test (3C): basic persistence (reliable network)...
+  ... Passed --  time  6.6s #peers 3 #RPCs    56 #Ops    0
+Test (3C): more persistence (reliable network)...
+  ... Passed --  time 17.6s #peers 5 #RPCs   280 #Ops    0
+Test (3C): partitioned leader and one follower crash, leader restarts (reliable network)...
+  ... Passed --  time  3.0s #peers 3 #RPCs    30 #Ops    0
+Test (3C): Figure 8 (reliable network)...
+  ... Passed --  time 28.5s #peers 5 #RPCs   456 #Ops    0
+Test (3C): unreliable agreement (unreliable network)...
+  ... Passed --  time 14.2s #peers 5 #RPCs   280 #Ops    0
+Test (3C): Figure 8 (unreliable) (unreliable network)...
+  ... Passed --  time 33.3s #peers 5 #RPCs  1652 #Ops    0
+Test (3C): churn (reliable network)...
+  ... Passed --  time 16.4s #peers 5 #RPCs   420 #Ops    0
+Test (3C): unreliable churn (unreliable network)...
+  ... Passed --  time 16.7s #peers 5 #RPCs   451 #Ops    0
+PASS
+ok      6.5840/raft1    136.244s
+```
+
+## task 4
+
+```bash
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run 3D
+Test (3D): snapshots basic (reliable network)...
+  ... Passed --  time 13.5s #peers 3 #RPCs   134 #Ops    0
+Test (3D): install snapshots (disconnect) (reliable network)...
+  ... Passed --  time 92.6s #peers 3 #RPCs  1138 #Ops    0
+Test (3D): install snapshots (disconnect) (unreliable network)...
+  ... Passed --  time 100.0s #peers 3 #RPCs  1284 #Ops    0
+Test (3D): install snapshots (crash) (reliable network)...
+  ... Passed --  time 54.9s #peers 3 #RPCs   544 #Ops    0
+Test (3D): install snapshots (crash) (unreliable network)...
+  ... Passed --  time 66.9s #peers 3 #RPCs   660 #Ops    0
+Test (3D): crash and restart all servers (unreliable network)...
+  ... Passed --  time 29.4s #peers 3 #RPCs   298 #Ops    0
+Test (3D): snapshot initialization after crash (unreliable network)...
+  ... Passed --  time 12.7s #peers 3 #RPCs   122 #Ops    0
+PASS
+ok      6.5840/raft1    370.052s
+```
+
+## task 1-4
+
+没测 4，直接基于 4 过了的代码测 3A - 3C 了。
+
+```bash
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run
+flag needs an argument: -run
+usage: go test [build/test flags] [packages] [build/test flags & test binary flags]
+Run 'go help test' and 'go help testflag' for details.
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run 3A
+Test (3A): initial election (reliable network)...
+  ... Passed --  time  3.6s #peers 3 #RPCs    32 #Ops    0
+Test (3A): election after network failure (reliable network)...
+  ... Passed --  time  5.4s #peers 3 #RPCs    84 #Ops    0
+Test (3A): multiple elections (reliable network)...
+  ... Passed --  time  6.4s #peers 7 #RPCs   324 #Ops    0
+PASS
+ok      6.5840/raft1    15.401s
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run 3B
+Test (3B): basic agreement (reliable network)...
+  ... Passed --  time  1.7s #peers 3 #RPCs    16 #Ops    0
+Test (3B): RPC byte count (reliable network)...
+  ... Passed --  time  5.3s #peers 3 #RPCs    48 #Ops    0
+Test (3B): test progressive failure of followers (reliable network)...
+  ... Passed --  time  5.4s #peers 3 #RPCs    68 #Ops    0
+Test (3B): test failure of leaders (reliable network)...
+  ... Passed --  time  6.1s #peers 3 #RPCs    96 #Ops    0
+Test (3B): agreement after follower reconnects (reliable network)...
+  ... Passed --  time  7.2s #peers 3 #RPCs    80 #Ops    0
+Test (3B): no agreement if too many followers disconnect (reliable network)...
+  ... Passed --  time  4.2s #peers 5 #RPCs   120 #Ops    0
+Test (3B): concurrent Start()s (reliable network)...
+  ... Passed --  time  1.2s #peers 3 #RPCs    10 #Ops    0
+Test (3B): rejoin of partitioned leader (reliable network)...
+  ... Passed --  time  7.4s #peers 3 #RPCs   116 #Ops    0
+Test (3B): leader backs up quickly over incorrect follower logs (reliable network)...
+  ... Passed --  time 46.3s #peers 5 #RPCs  2000 #Ops    0
+Test (3B): RPC counts aren't too high (reliable network)...
+  ... Passed --  time  2.9s #peers 3 #RPCs    26 #Ops    0
+PASS
+ok      6.5840/raft1    87.594s
+shaddocknh3@LAPTOP-JGAAJ56H:~/6.5840/src/raft1$ go test -run 3C
+Test (3C): basic persistence (reliable network)...
+  ... Passed --  time  6.1s #peers 3 #RPCs    56 #Ops    0
+Test (3C): more persistence (reliable network)...
+  ... Passed --  time 18.0s #peers 5 #RPCs   264 #Ops    0
+Test (3C): partitioned leader and one follower crash, leader restarts (reliable network)...
+  ... Passed --  time  3.5s #peers 3 #RPCs    34 #Ops    0
+Test (3C): Figure 8 (reliable network)...
+  ... Passed --  time 39.5s #peers 5 #RPCs   652 #Ops    0
+Test (3C): unreliable agreement (unreliable network)...
+  ... Passed --  time 15.8s #peers 5 #RPCs   324 #Ops    0
+Test (3C): Figure 8 (unreliable) (unreliable network)...
+  ... Passed --  time 36.6s #peers 5 #RPCs  1816 #Ops    0
+Test (3C): churn (reliable network)...
+  ... Passed --  time 16.7s #peers 5 #RPCs   332 #Ops    0
+Test (3C): unreliable churn (unreliable network)...
+  ... Passed --  time 16.4s #peers 5 #RPCs   324 #Ops    0
+PASS
+ok      6.5840/raft1    152.641s
+```

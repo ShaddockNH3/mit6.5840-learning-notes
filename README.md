@@ -47,7 +47,7 @@
 
 ### lab3：Raft
 
-看完论文就可以开始做 lab3 了，不过我多看了一个 GFS 论文。
+看完论文就可以开始做 lab3 了，不过我多看了一个 GFS 论文（看了一点看不下去了，先去写 lab3 去）。
 
 - lab1 论文原文翻译：[Raft(Extend) 论文](./paper/Raft(Extend).md)
 - lab1 论文原文阅读笔记：[Raft(Extend) 阅读笔记](./paper-read/paper3.md)
