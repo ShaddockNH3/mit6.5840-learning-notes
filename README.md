@@ -49,21 +49,35 @@
 
 看完论文就可以开始做 lab3 了，不过我多看了一个 GFS 论文（看了一点看不下去了，先去写 lab3 去）。
 
-- lab1 论文原文翻译：[Raft(Extend) 论文](./paper/Raft(Extend).md)
-- lab1 论文原文阅读笔记：[Raft(Extend) 阅读笔记](./paper-read/paper3.md)
+- lab3 论文原文翻译：[Raft(Extend) 论文](./paper/Raft(Extend).md)
+- lab3 论文原文阅读笔记：[Raft(Extend) 阅读笔记](./paper-read/paper3.md)
 - lab3 实验要求翻译：[lab3 实验要求翻译](./lab3/raft.md)
 - lab3 实验要求分析：[lab3 实验要求分析](./lab3/raft-exp.md)
+- lab3 过程笔记：[raft-aar](./lab3/raft-aar.md)
+- lab3 测试记录：[lab3 测试记录](./lab3/test.md)
 
 ### 论文阅读
 
-- [MapReduce 论文](./paper/MapReduce.md)
+> 感觉主要是这几篇论文需要重点阅读，最重要的是 MapReduce 和 Raft，其他的几篇论文可以作为辅助理解的材料，没放在这里的论文就没去看了。
+>
+> lab 1 主要是看 MapReduce，lab 2 可以不用看论文，lab 3 主要是看 Raft，lab 4 也可以不用看论文，lab 5 依旧是看 Raft，同时可以阅读 Spanner 论文辅助理解。
+>
+> 但是我觉得还是有必要看其他论文的，因为不需要看论文的部分基本都是从论文里的一些思想延申出来的东西，了解论文有助于更好地理解这些思想。
+>
+> lab 4 特地有提到为了获得更广阔的视角，可以看看 Chubby, Paxos Made Live, Spanner, Zookeeper, Harp, Viewstamped Replication 以及 Bolosky 等人的论文。
+
+- [MapReduce 论文翻译](./paper/MapReduce.md)
 - [MapReduce 阅读笔记](./paper-read/paper1.md)
-- [FaultTolerant 论文](./paper/FaultTolerant.md)
+- [FaultTolerant 论文翻译](./paper/FaultTolerant.md)
 - [FaultTolerant 阅读笔记](./paper-read/paper2.md)
-- [Raft(Extend) 论文](./paper/Raft(Extend).md)
+- [Raft(Extend) 论文翻译](./paper/Raft(Extend).md)
 - [Raft(Extend) 阅读笔记](./paper-read/paper3.md)
-- [GFS 论文](./paper/GFS.md)
+- [GFS 论文翻译](./paper/GFS.md)
 - [GFS 阅读笔记](./paper-read/paper4.md)
+- [ZooKeeper 论文翻译](./paper/ZooKeeper.md)
+- [ZooKeeper 阅读笔记](./paper-read/paper5.md)
+- [Spanner 论文翻译](./paper/Spanner.md)
+- [Spanner 阅读笔记](./paper-read/paper6.md)
 
 ### 代码练习
 
@@ -72,4 +86,4 @@
 ## 参考资料
 
 1.[课程原网站](http://nil.csail.mit.edu/6.5840/2025/schedule.html)
-2.[b 站 2020 MIT 6.824](https://www.bilibili.com/video/BV1R7411t71W?vd_source=8a950947d6bc6120547b345c6856e11b&spm_id_from=333.788.videopod.episodes)搭配 b 站 自带的翻译。事实上也可以直接使用油管的视频加上油管自带的翻译，不过 b  站 搬运的本本更经典一点，所以就用 b 站 的版本上。
+2.[b 站 2020 MIT 6.824](https://www.bilibili.com/video/BV1R7411t71W?vd_source=8a950947d6bc6120547b345c6856e11b&spm_id_from=333.788.videopod.episodes)搭配 b 站 自带的翻译。事实上也可以直接使用油管的视频加上油管自带的翻译，不过 b  站 搬运的版本更经典一点，所以就用 b 站 的版本上。
