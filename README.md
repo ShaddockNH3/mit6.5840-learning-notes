@@ -85,5 +85,5 @@
 
 ## 参考资料
 
-1.[课程原网站](http://nil.csail.mit.edu/6.5840/2025/schedule.html)
-2.[b 站 2020 MIT 6.824](https://www.bilibili.com/video/BV1R7411t71W?vd_source=8a950947d6bc6120547b345c6856e11b&spm_id_from=333.788.videopod.episodes)搭配 b 站 自带的翻译。事实上也可以直接使用油管的视频加上油管自带的翻译，不过 b  站 搬运的版本更经典一点，所以就用 b 站 的版本上。
+1. [课程原网站](http://nil.csail.mit.edu/6.5840/2025/schedule.html)
+2. [b 站 2020 MIT 6.824](https://www.bilibili.com/video/BV1R7411t71W?vd_source=8a950947d6bc6120547b345c6856e11b&spm_id_from=333.788.videopod.episodes)搭配 b 站 自带的翻译。事实上也可以直接使用油管的视频加上油管自带的翻译，不过 b  站 搬运的版本更经典一点，所以就用 b 站 的版本上。
