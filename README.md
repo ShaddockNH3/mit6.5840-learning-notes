@@ -79,6 +79,8 @@
 - [Spanner 论文翻译](./paper/Spanner.md)
 - [Spanner 阅读笔记](./paper-read/paper6.md)
 
+> 其中，后三篇论文只是从宏观理解，没有精读。
+
 ### 代码练习
 
 - [一些语法回顾](./practice/)
